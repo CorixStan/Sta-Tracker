@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sta Tracker</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="theme-color" content="#5b2cff" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="branding">
+      <div class="logo">STA</div>
+      <h1>Sta Tracker</h1>
+    </div>
+    <div class="controls">
+      <input id="search" placeholder="Cihaz ara..." />
+      <select id="statusFilter">
+        <option value="all">Tümü</option>
+        <option value="online">Online</option>
+        <option value="offline">Offline</option>
+      </select>
+      <button id="installBtn" class="install-btn" hidden>Install</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="devices" class="device-grid" aria-live="polite"></section>
+  </main>
+
+  <div id="toast" class="toast" aria-hidden="true"></div>
+
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-card">
+      <button id="closeModal" class="close" aria-label="Kapat">&times;</button>
+      <h2 id="modalTitle">Cihaz</h2>
+      <div id="modalBody"></div>
+      <div class="modal-actions">
+        <button id="modalLaunch" class="launch">Launch</button>
+        <button id="modalPing" class="secondary">Ping</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
